@@ -14,9 +14,9 @@
     }
   ],
   "env": {
-    "DB_USER": "@platzivideos-db-user",
-    "DB_PASSWORD": "@platzivideos-db-password",
-    "DB_HOST": "@platzivideos-db-host",
-    "DB_NAME": "@platzivideos-db-name"
+    "DB_USER": "@articles-db-user",
+    "DB_PASSWORD": "@articles-db-password",
+    "DB_HOST": "@articles-db-host",
+    "DB_NAME": "@articles-db-dbname"
   }
 }
