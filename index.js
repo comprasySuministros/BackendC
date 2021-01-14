@@ -3,11 +3,11 @@ const app = express()
 const cors = require('cors')
 const {config} = require('./config/index')
 const articlesServices = require('./routes/articles')
-const {logError,wrapError, handlerError} = require('./utils/middleware/errorHandler')
-const notfoundhandler = require('./utils/middleware/notFoundHandler')
+const {logError,wrapError, handlerError} = require('./util/middleware/errorHandler')
+const notfoundhandler = require('./util/middleware/notFoundHandler')
 
 app.use(cors({
-  origin: true,
+  origin: '*',
   credentials: true,
 }));
 
