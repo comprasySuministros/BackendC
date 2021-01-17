@@ -6,10 +6,7 @@ const articlesServices = require('./routes/articles')
 const {logError,wrapError, handlerError} = require('./util/middleware/errorHandler')
 const notfoundhandler = require('./util/middleware/notFoundHandler')
 
-app.use(cors({
-  origin: '*',
-  credentials: true,
-}));
+app.use(cors());
 
 app.use(express.json())
 articlesServices(app)

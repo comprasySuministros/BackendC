@@ -1,7 +1,7 @@
 const express = require('express')
 const articlesServices = require('../services/articles')
-// const cacheResponse = require('../util/cacheResponse')
-// const {FIVE_MINUTES_IN_SECONDS, SIXTY_MINUTES_IN_SECONDS} = require('../util/time')
+const cacheResponse = require('../util/cacheResponse')
+const {FIVE_MINUTES_IN_SECONDS, SIXTY_MINUTES_IN_SECONDS} = require('../util/time')
 const validateHandler = require('../util/middleware/handlerShema')
 const { articleIdSchema,
   createArticleSchema,
@@ -14,7 +14,7 @@ function articlesApi(app) {
   const articlesService = new articlesServices()
 
   router.get('/', async (req, res, next) => {
-    // cacheResponse(res,FIVE_MINUTES_IN_SECONDS)
+    cacheResponse(res,FIVE_MINUTES_IN_SECONDS)
     try {
       const articles = await articlesService.getArticles()
       res.status(200).json({
@@ -28,7 +28,7 @@ function articlesApi(app) {
 
   router.get('/:articleId', validateHandler({articleId:articleIdSchema}, 'params'),async (req, res, next) => {
     const {articleId} = req.params
-    // cacheResponse(res, SIXTY_MINUTES_IN_SECONDS)
+    cacheResponse(res, SIXTY_MINUTES_IN_SECONDS)
     try {
       const article = await articlesService.getArticle({articleId})
       res.status(200).json({
