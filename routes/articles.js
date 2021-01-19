@@ -20,7 +20,7 @@ function articlesApi(app) {
       res.status(200).json({
         data: articles,
         message: "success list of articles"
-      })  
+      })
     } catch (error) {
       next(error);
     }
