@@ -18,7 +18,7 @@ npm install
 npm run dev
 ```
 
-This project start in port http://localhost:3000
+This project start in port http://localhost:3001
 
 ### 🛠️ build with
 
